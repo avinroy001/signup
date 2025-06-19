@@ -12,6 +12,9 @@ const SubscriptionForm = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setError('Valid email required.');
+      document.getElementById('email').style.borderColor = 'rgb(255, 99, 71)';
+      document.getElementById('email').style.color = 'rgb(255, 99, 71)';
+      document.getElementById('email').style.backgroundColor = 'rgba(255, 99, 71, 0.6)';
     } else {
       setError('');
       setSuccess(true);
@@ -51,7 +54,6 @@ const SubscriptionForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address"
-            style={error ? { borderColor: 'rgb(255, 99, 71)', color: 'rgb(255, 99, 71)', backgroundColor: 'rgba(255, 99, 71, 0.6)' } : {}}
           />
           {error && <em>{error}</em>}
           <button type="submit" className="sub-btn">Subscribe to monthly newsletter</button>
