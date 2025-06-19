@@ -9,7 +9,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<SubscriptionForm />} />
-      <Route path="/success" element={<SubscriptionForm />} />
+      <Route path="/success.html" element={<SubscriptionForm />} />
     </Routes>
   </BrowserRouter>,
 );
