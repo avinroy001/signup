@@ -1,0 +1,161 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #1e1e2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.main {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: url('./assets/mobile-image.jpg') no-repeat center;
+  background-size: contain;
+  z-index: 0;
+}
+
+.sign-up-form h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.sign-up-form p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sign-up-form ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.sign-up-form ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.sign-up-form ul li::before {
+  content: "✔";
+  color: #ff6347;
+  margin-right: 0.5rem;
+}
+
+#email {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.sub-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.sub-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.footer a {
+  color: #ff6347;
+  text-decoration: none;
+}
+
+.thanks-for-sub {
+  text-align: center;
+  color: white;
+}
+
+.thanks-for-sub h1 {
+  margin: 1rem 0;
+}
+
+.success-text {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.dismiss-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dismiss-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (min-width: 601px) {
+  .main {
+    background: white;
+    color: #1e1e2f;
+  }
+  .main::before {
+    display: none;
+  }
+  .sign-up-form h1, .sign-up-form p, .sign-up-form ul li, #email, .sub-btn, .footer {
+    color: #1e1e2f;
+  }
+  #email {
+    background: white;
+    border-color: #ccc;
+  }
+  .sub-btn, .dismiss-btn {
+    background-color: #1e1e2f;
+  }
+  .sub-btn:hover, .dismiss-btn:hover {
+    background-color: #333;
+  }
+}
