@@ -14,11 +14,11 @@ const SubscriptionForm = () => {
       setError('Valid email required.');
     } else {
       setError('');
-      navigate('/success', { state: { email } });
+      navigate('/success.html', { state: { email } });
     }
   };
 
-  if (window.location.pathname === '/success') {
+  if (window.location.pathname === '/success.html') {
     const email = window.history.state?.email || '';
     return (
       <div className="main">
