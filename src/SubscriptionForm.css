@@ -80,6 +80,12 @@ body {
   z-index: 1;
 }
 
+#email.error {
+  border-color: rgb(255, 99, 71);
+  color: rgb(255, 99, 71);
+  background-color: rgba(255, 99, 71, 0.6);
+}
+
 .sub-btn {
   width: 100%;
   padding: 0.75rem;
@@ -151,6 +157,11 @@ body {
   #email {
     background: white;
     border-color: #ccc;
+  }
+  #email.error {
+    border-color: rgb(255, 99, 71);
+    color: rgb(255, 99, 71);
+    background-color: rgba(255, 99, 71, 0.6);
   }
   .sub-btn, .dismiss-btn {
     background-color: #1e1e2f;
