@@ -67,6 +67,12 @@ body {
   color: #ff6347;
   margin-right: 0.5rem;
 }
+#error-msg {
+  display: block;
+  color: rgb(255, 99, 71);
+  font-style: italic;
+  margin-bottom: 10px;
+}
 
 #email {
   width: 100%;

@@ -1,15 +1,22 @@
+// index.js
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SubscriptionForm from './SubscriptionForm';
+import Success from './Success';
+import './index.css';
+import './App.css';
 
-const root = createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<SubscriptionForm />} />
-      <Route path="/success.html" element={<SubscriptionForm />} />
-    </Routes>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SubscriptionForm />} />
+        <Route path="/success" element={<Success />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );

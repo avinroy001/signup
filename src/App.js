@@ -1,10 +1,11 @@
+// App.js
+import React from 'react';
 import './App.css';
-import SubscriptionForm from './SubscriptionForm';
 
-function App() {
+function App({ children }) {
   return (
-    <div>
-     <SubscriptionForm />
+    <div className="app">
+      {children}
     </div>
   );
 }
