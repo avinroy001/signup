@@ -1,22 +1,20 @@
-// index.js
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SubscriptionForm from './SubscriptionForm';
-import Success from './Success';
-import './index.css';
-import './App.css';
+// src/index.js
 
-const container = document.getElementById('root');
-const root = createRoot(container);
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import './index.css';
+import App from './App';
+import Success from './Success';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SubscriptionForm />} />
-        <Route path="/success" element={<Success />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/success" element={<Success />} />
+    </Routes>
+  </BrowserRouter>
 );
