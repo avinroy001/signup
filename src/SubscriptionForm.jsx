@@ -42,7 +42,7 @@ function SubscriptionForm({ onSuccess }) {
               : {}
           }
         />
-        {error && <em>{error}</em>}
+        {error && <em>Valid email required.</em>}
         <button type="submit" className="sub-btn">
           Subscribe
         </button>
