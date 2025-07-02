@@ -1,245 +1,46 @@
-/* General Styles */
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: #242742;
-  margin: 0;
-  padding: 0;
+  font-family: Roboto, sans-serif;
 }
 
-/* Centering the page content */
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Card container (Form + Image) */
-.card-container {
-  background: white;
-  display: flex;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
-  width: 90%;
-}
-
-/* Horizontal layout for large screens */
-.content-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-/* Form Section */
-.form-wrapper {
-  flex: 1;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: white;
 }
 
-.form-wrapper h1 {
-  color: #242742;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.form-wrapper p {
-  color: #242742;
-  margin-bottom: 1rem;
-}
-
-.form-wrapper ul {
-  padding-left: 0;
-  list-style: none;
-  margin-bottom: 1.5rem;
-}
-
-.form-wrapper ul li {
-  margin-bottom: 0.75rem;
-  color: #242742;
-  display: flex;
-  align-items: center;
-}
-
-/* ✅ Tick icon using React Icon */
-.tick-icon {
-  color: #ff6257;
-  margin-right: 0.75rem;
-  font-size: 1.1rem;
-}
-
-/* Label and Input */
-label {
+.sign-up-form input {
   display: block;
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #242742;
-  margin-bottom: 0.25rem;
-}
-
-#email {
-  padding: 0.75rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
   width: 100%;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
 }
 
-#email.error {
-  border-color: rgb(255, 99, 71);
-  color: rgb(255, 99, 71);
-  background-color: rgba(255, 99, 71, 0.1);
-}
-
-/* Error Message */
-#error-msg {
-  color: rgb(255, 99, 71);
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-/* Subscribe Button - Initial State */
 .sub-btn {
-  padding: 0.75rem;
-  background-color: #242742; /* solid dark blue */
+  background-color: black;
   color: white;
-  font-weight: bold;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  font-size: 0.95rem;
 }
 
-/* Subscribe Button - Hover State */
-.sub-btn:hover {
-  background: linear-gradient(to right, #ff6a3d, #ff527b);
-  box-shadow: 0 8px 20px rgba(255, 98, 87, 0.4);
-  transform: translateY(-1px);
+.dismiss-btn {
+  margin-top: 1rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
 }
 
-.sub-btn:active {
-  transform: scale(0.98);
-}
-
-
-/* Image Section */
-.image-wrapper {
-  flex: 1;
-  background-color: #ff6257;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-img {
-  width: 100%;
-  height: auto;
-}
-
-/* Footer */
-.footer {
-  padding: 1rem;
+.thanks-for-sub {
   text-align: center;
-  background-color: #242742;
-  color: white;
-}
-
-.footer a {
-  color: #ff6347;
-  text-decoration: none;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .content-container {
-    flex-direction: column-reverse;
-  }
-
-  .product-img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* ---------- Success Page Styles ---------- */
-.success-page {
-  background-color: #242742;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   padding: 2rem;
 }
 
-.success-card {
-  background: white;
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  max-width: 400px;
+.footer {
+  margin-top: 2rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.success-card h1 {
-  font-size: 2rem;
-  color: #242742;
-  margin-bottom: 1rem;
+  font-size: 0.8rem;
 }
 
 .success-text {
-  color: #242742;
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
-}
-
-
-/* Dismiss Button - Initial State */
-.dismiss-btn {
-  padding: 0.75rem 1.5rem;
-  background-color: #242742; /* solid dark blue */
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-  font-size: 0.95rem;
-}
-
-/* Dismiss Button - Hover State */
-.dismiss-btn:hover {
-  background: linear-gradient(to right, #ff6a3d, #ff527b);
-  box-shadow: 0 8px 20px rgba(255, 98, 87, 0.4);
-  transform: translateY(-1px);
-}
-
-/* Optional: click feedback */
-.dismiss-btn:active {
-  transform: scale(0.98);
-}
-
-/* ✅ Success Icon */
-.check-icon-wrapper {
-  background: linear-gradient(to right, #ff6a3d, #ff527b);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem auto;
-}
-
-.check-icon {
-  color: white;
-  font-size: 30px;
+  margin-top: 1rem;
 }

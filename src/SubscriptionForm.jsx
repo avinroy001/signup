@@ -1,58 +1,54 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import './SubscriptionForm.css';
+import { useState } from "react";
 
-// export default function SubscriptionForm() {
-//   const [email, setEmail] = useState('');
-//   const [error, setError] = useState('');
-//   const navigate = useNavigate();
+function SubscriptionForm({ onSuccess }) {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
-//     if (!emailRegex.test(email)) {
-//       setError('Valid email required.');
-//     } else {
-//       setError('');
-//       navigate('/success', { state: { email } });
-//     }
-//   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValidEmail(email)) {
+      setError("");
+      onSuccess(email);
+    } else {
+      setError("Valid email required.");
+    }
+  };
 
-//   return (
-//     <div className="main">
-//       <div className="card-container">
-//         <img src={window.innerWidth <= 768 ? '/mobile.jpg' : '/desktop.jpg'} alt="Product Image" className="product-img" />
+  return (
+    <div className="sign-up-form">
+      <h1>Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul>
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email address</label>
+        <input
+          id="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={
+            error
+              ? {
+                  borderColor: "rgb(255, 99, 71)",
+                  color: "rgb(255, 99, 71)",
+                  backgroundColor: "rgba(255, 99, 71, 0.6)",
+                }
+              : {}
+          }
+        />
+        {error && <em>{error}</em>}
+        <button type="submit" className="sub-btn">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  );
+}
 
-//         <div className="form-wrapper">
-//           <h1>Stay updated!</h1>
-//           <p>Join hundreds of creators using our product daily. Benefits include:</p>
-//           <ul>
-//             <li>✔ Real-time updates</li>
-//             <li>✔ Premium support</li>
-//             <li>✔ Exclusive features</li>
-//           </ul>
-
-//           <form onSubmit={handleSubmit}>
-//             <label htmlFor="email">Email address</label>
-//             <input
-//               type="email"
-//               id="email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               placeholder="email@company.com"
-//               className={error ? 'error' : ''}
-//               required
-//             />
-//             {error && <em id="error-msg">{error}</em>}
-//             <button type="submit" className="sub-btn">Subscribe to monthly newsletter</button>
-//           </form>
-//         </div>
-//       </div>
-
-//       <footer className="footer">
-//         <p>Challenge by <a href="https://crio.do"  target="_blank" rel="noreferrer">Crio</a>.</p>
-//       </footer>
-//     </div>
-//   );
-// }
+export default SubscriptionForm;
